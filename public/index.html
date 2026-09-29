@@ -156,7 +156,7 @@ document.getElementById('proposalForm').addEventListener('submit',async e=>{
    if(!response.ok || !result.ok) throw new Error(result.error || 'send');
    sent.textContent='Proposta enviada correctament a Lilipo ✦';
    sent.classList.add('show');
-   e.currentTarget.reset();
+   document.getElementById("proposalForm").reset();
    document.getElementById('proposalName').value='';
    label.textContent='LA TEVA LILIPO';
    button.textContent='Proposta enviada ✓';
