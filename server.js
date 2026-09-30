@@ -28,10 +28,17 @@ function escapeHtml(value) {
 }
 
 app.post("/api/proposals", async (req, res) => {
+
+  console.log(
+    ">>> PETICIÓ /api/proposals REBUDA",
+    new Date().toISOString()
+  );
+
   try {
     const name = clean(req.body.name, 120);
     const email = clean(req.body.email, 200);
-    const braceletName = clean(req.body.braceletName, 160) || "La teva Lilipo";
+    const braceletName =
+      clean(req.body.braceletName, 160) || "La teva Lilipo";
     const color = clean(req.body.color, 60);
     const detail = clean(req.body.detail, 60);
     const idea = clean(req.body.idea, 3000);
@@ -52,6 +59,7 @@ app.post("/api/proposals", async (req, res) => {
 
     if (!resend || !FROM_EMAIL) {
       console.error("Resend no està configurat.");
+
       return res.status(500).json({
         ok: false,
         error: "El servei de correu no està configurat."
