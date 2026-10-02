@@ -1348,6 +1348,37 @@ button, input, textarea, select { max-width: 100%; }
   .site-header #favoritesToggle { right: 10px !important; }
 }
 
+
+/* AJUST FINAL RESPONSIVE: titular llegible i KEEP IT COLOURFUL més gran */
+.hero h1 {
+  max-width: 100%;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  hyphens: none !important;
+  font-size: clamp(3.4rem, 10.5vw, 11.5rem) !important;
+  line-height: .9 !important;
+  letter-spacing: -.055em !important;
+}
+.hero h1 span { white-space: nowrap; }
+.statement h2 {
+  font-size: clamp(3.2rem, 10.5vw, 10rem) !important;
+  line-height: .9 !important;
+  letter-spacing: -.055em !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+.statement h2 span { white-space: nowrap; }
+@media (max-width: 700px) {
+  .hero { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .hero-left { min-width: 0 !important; width: 100% !important; }
+  .hero h1 { font-size: clamp(3rem, 15vw, 5.5rem) !important; line-height: .92 !important; }
+  .hero h1 span { white-space: normal; }
+  .hero-right { height: auto !important; min-height: 0 !important; padding: 12px 0 28px !important; }
+  .hero-logo { width: min(78vw, 390px) !important; max-width: 100% !important; }
+  .statement { padding: 70px 6vw !important; overflow: hidden !important; }
+  .statement h2 { font-size: clamp(2.7rem, 12.5vw, 5rem) !important; line-height: .95 !important; }
+  .statement h2 span { white-space: normal; }
+}
 </style>
 </head>
 <body>
